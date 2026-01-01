@@ -796,7 +796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gun
   muzzle: {fileID: 1360920902}
   projectilePrefab: {fileID: 8721238941350695610, guid: 02d01179d7c208f4d94aa4719e85fe9e, type: 3}
-  fireRate: 6
+  fireRate: 50
   spread: 8
 --- !u!114 &623866716
 MonoBehaviour:
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDash
   dashSpeed: 14
-  dashDuration: 0.12
+  dashDuration: 0.3
   dashCooldown: 0.5
 --- !u!1 &832575517
 GameObject:

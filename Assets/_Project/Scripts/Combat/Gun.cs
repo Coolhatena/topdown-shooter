@@ -12,9 +12,17 @@ public class Gun : MonoBehaviour
     [SerializeField] private float spread = 2f; // Degrees
 
     private float nextFireTime;
+    private PlayerDash dash;
+
+    private void Awake()
+    {
+        dash = GetComponentInParent<PlayerDash>();
+    }
 
     private void Update()
     {
+        if (dash != null && dash.IsDashing) return;
+
         if (Mouse.current.leftButton.isPressed)
         {
             tryFire();
