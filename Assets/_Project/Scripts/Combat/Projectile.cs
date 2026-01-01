@@ -21,9 +21,12 @@ public sealed class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        Health hp = other.GetComponentInParent<Health>();
+        if (hp != null)
         {
+            hp.TakeDamage(damage);
             Destroy(gameObject);
+            return;
         }
     }
 }
