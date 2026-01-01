@@ -18,6 +18,7 @@
 
 # Visual Studio
 .vs/
+*.slnx
 
 # OS
 .DS_Store
