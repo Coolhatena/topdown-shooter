@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public sealed class Health : MonoBehaviour
@@ -5,6 +6,7 @@ public sealed class Health : MonoBehaviour
     [SerializeField] private int maxHp = 3;
 
     public int CurrentHp { get; private set; }
+    public event Action<Health> Died;
 
     private void Awake()
     {
@@ -13,11 +15,12 @@ public sealed class Health : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (amount <= 0) return;
+        if (amount <= 0 || CurrentHp <= 0) return;
 
         CurrentHp -= amount;
         if (CurrentHp <= 0)
         {
+            Died?.Invoke(this);
             Die();
         }
     }
