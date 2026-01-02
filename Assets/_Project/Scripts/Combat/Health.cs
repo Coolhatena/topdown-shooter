@@ -3,7 +3,7 @@ using UnityEngine;
 
 public sealed class Health : MonoBehaviour
 {
-    [SerializeField] private int maxHp = 3;
+    [SerializeField] private int maxHp = 5;
 
     public int CurrentHp { get; private set; }
     public event Action<Health> Died;
@@ -21,12 +21,14 @@ public sealed class Health : MonoBehaviour
         if (CurrentHp <= 0)
         {
             Died?.Invoke(this);
-            Die();
+            // Die();
         }
     }
 
+    /*
     private void Die()
     {
         Destroy(gameObject);
     }
+    */
 }

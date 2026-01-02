@@ -10,12 +10,14 @@ public sealed class PlayerMovementRB : MonoBehaviour
     private PlayerInputActions input;
     private Vector3 desiredVelocity;
     private PlayerDash dash;
+    private PlayerKnockback knockback;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         input = new PlayerInputActions();
         dash = GetComponent<PlayerDash>();
+        knockback = GetComponent<PlayerKnockback>();
         Debug.Log("PlayerMovementRB Awake OK");
     }
 
@@ -39,6 +41,8 @@ public sealed class PlayerMovementRB : MonoBehaviour
     private void FixedUpdate()
     {
         if (dash != null && dash.IsDashing) return;
+        if (knockback != null && knockback.IsActive) return;
+
         rb.MovePosition(rb.position + desiredVelocity * Time.fixedDeltaTime);
     }
 }

@@ -14,7 +14,10 @@ GameObject:
   - component: {fileID: 932631119391987639}
   - component: {fileID: 2901828936342538781}
   - component: {fileID: 228175609358971772}
+  - component: {fileID: 6394555556366388671}
   - component: {fileID: 8937498697245443912}
+  - component: {fileID: 9149642619542804960}
+  - component: {fileID: 1071997464717511434}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -157,6 +160,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHp: 3
+--- !u!114 &6394555556366388671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238825967595035652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c9893b3f381fe45b10ca2fcef22e37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
 --- !u!114 &8937498697245443912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,4 +186,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyChaser
   target: {fileID: 0}
   moveSpeed: 3.5
-  stopDistance: 1.2
+  stopDistance: 1
+--- !u!114 &9149642619542804960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238825967595035652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfb8ba06d2343c747b54c8c370ca23c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyContactDamage
+  damage: 1
+--- !u!114 &1071997464717511434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238825967595035652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d4578cb2458d94798e6628e747bf5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyKnockback
+  duration: 0.08
+  speed: 4

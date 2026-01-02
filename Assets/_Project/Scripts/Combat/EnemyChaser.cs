@@ -8,14 +8,17 @@ public sealed class EnemyChaser : MonoBehaviour
     [SerializeField] private float stopDistance = 1.2f;
 
     private Rigidbody rb;
+    private EnemyKnockback knockback;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        knockback = GetComponent<EnemyKnockback>();
     }
 
     private void FixedUpdate()
     {
+        if (knockback != null && knockback.IsActive) return;
         if (target == null) return;
 
         Vector3 toTarget = target.position - rb.position;
