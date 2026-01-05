@@ -33,6 +33,12 @@ public sealed class EnemySpawner : MonoBehaviour
                 alive.Add(hp);
                 hp.Died += OnEnemyDied;
             }
+
+            var shooter = go.GetComponent<EnemyShooter>();
+            if (shooter != null && player != null)
+            {
+                shooter.SetTarget(player);
+            }
         }
     }
 

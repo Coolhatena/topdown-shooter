@@ -1015,7 +1015,7 @@ GameObject:
   - component: {fileID: 623866718}
   - component: {fileID: 623866717}
   - component: {fileID: 623866719}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1278,7 +1278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   player: {fileID: 623866713}
-  enemyPrefab: {fileID: 5238825967595035652, guid: a8d9ef3c0804a2c4c8f8692e33c4ca40, type: 3}
+  enemyPrefab: {fileID: 5109864769888480008, guid: e20ef3ff890e3dd4e896b7b4d2676f89, type: 3}
   spawnPoints:
   - {fileID: 589996156}
   - {fileID: 76459327}
@@ -1570,9 +1570,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1079418803}
-  - component: {fileID: 1079418804}
   - component: {fileID: 1079418806}
   - component: {fileID: 1079418805}
+  - component: {fileID: 1079418804}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
