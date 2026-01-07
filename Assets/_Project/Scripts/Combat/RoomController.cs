@@ -5,6 +5,9 @@ public sealed class RoomController : MonoBehaviour
     [SerializeField] private EnemySpawner spawner;
     [SerializeField] private Door[] doors;
 
+    [SerializeField] private GameObject clearRewardPrefab;
+    [SerializeField] private Transform rewardSpawnPoint;
+
     private bool started;
     private bool cleared;
 
@@ -55,6 +58,11 @@ public sealed class RoomController : MonoBehaviour
     private void OnRoomCleared()
     {
         Debug.Log("Room cleared!");
-        // Additional logic for when the room is cleared.
+
+        if (clearRewardPrefab != null)
+        {
+            Vector3 pos = rewardSpawnPoint != null ? rewardSpawnPoint.position : transform.position;
+            Instantiate(clearRewardPrefab, pos, Quaternion.identity);
+        }
     }
 }
